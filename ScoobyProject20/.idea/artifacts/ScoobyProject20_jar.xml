@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ScoobyProject20:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ScoobyProject20_jar</output-path>
+    <root id="archive" name="ScoobyProject20.jar">
+      <element id="module-output" name="ScoobyProject20" />
+    </root>
+  </artifact>
+</component>
