@@ -1,4 +1,8 @@
-public class Atom {
+package sample;
+
+import sun.awt.Symbol;
+
+public class Atom implements Comparable<Atom>{
 
     private String symbol;
     private int no;
@@ -8,6 +12,10 @@ public class Atom {
     private int orbitalD;
     private int orbitalF;
     private String order;
+
+    public Atom (String symbol){
+        this.symbol = symbol;
+    }
 
     public Atom(String symbol, int no, int S, int P, int D, int F, String order){
         this.symbol = symbol;
@@ -23,4 +31,12 @@ public class Atom {
         return "" + symbol + ", S: " + orbitalS + ", P: " +  orbitaLP + ", D: " + orbitalD + ", F: " + orbitalF + ", Order: " + order;
     }
 
+    public String getSymbol(){
+        return symbol;
+    }
+
+    public int compareTo(Atom o) {
+        if(o.getSymbol() == symbol) return 1;
+        else return -1;
+    }
 }

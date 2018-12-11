@@ -1,3 +1,5 @@
+package sample;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -57,6 +59,19 @@ public class Atoms {
         for(int i = 0; i < pointer; i++){
             System.out.println(atoms.get(i));
         }
+    }
+
+    public Atom getAtom(String atomSymbol){
+        Atom testAtom = new Atom(atomSymbol);
+        if(atoms.contains(testAtom)){
+            for(int i = 0; i < pointer; i++){
+                if(atoms.get(i).getSymbol().equals(atomSymbol)){
+                    return atoms.get(i);
+                }
+            }
+        }
+        return new Atom("");
+
     }
 
 }
