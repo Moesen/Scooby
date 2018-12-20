@@ -2,6 +2,8 @@ package sample;
 
 import sun.awt.Symbol;
 
+import java.util.ArrayList;
+
 public class Atom implements Comparable<Atom>{
 
     private String symbol;
@@ -12,6 +14,7 @@ public class Atom implements Comparable<Atom>{
     private int orbitalD;
     private int orbitalF;
     private String order;
+
 
     public Atom (String symbol){
         this.symbol = symbol;
@@ -25,6 +28,8 @@ public class Atom implements Comparable<Atom>{
         this.orbitalD = D;
         this.orbitalF = F;
         this.order = order;
+
+
     }
 
     public String toString(){
@@ -34,6 +39,7 @@ public class Atom implements Comparable<Atom>{
     public String getSymbol(){
         return symbol;
     }
+
 
     public int compareTo(Atom o) {
         if(o.getSymbol() == symbol) return 1;

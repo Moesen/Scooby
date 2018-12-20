@@ -28,12 +28,16 @@ public class Main extends Application {
     private int rowPointer = 0;
     private TextField symboleField;
     private NumberTextField chargeField;
+    private TextField orbitalField;
+
     Atom atom;
 
     private String symbole;
     private String charg;
+    private String orbital;
     private Label infoTxt = new Label();
     private Label atomTxt = new Label();
+    private Label answTxt = new Label();
 
 
     @Override
@@ -69,6 +73,11 @@ public class Main extends Application {
 
         introGrid.add(chargeRow, 1, rowPointer++);
 
+
+
+
+
+
         //Adds processButton
         Button processAction = makeButton("Process!",100,100);
 
@@ -84,14 +93,21 @@ public class Main extends Application {
 
         introGrid.add(infoRow,1,rowPointer++);
 
+        HBox answBox = new HBox(10);
+        answBox.setAlignment(Pos.CENTER_LEFT);
+        answBox.getChildren().addAll(answTxt);
 
+        rowPointer++;
+
+        introGrid.add(answBox,1,rowPointer);
 
 
 
         processAction.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                resetInfoTxt();
+                Atom tempAtom;
+                resetTxt();
                 if(checkFields(symboleField, "No Symbol detected")) return;
                 if(checkFields(chargeField, "No Charge detected")) return;
 
@@ -106,9 +122,10 @@ public class Main extends Application {
                     infoTxt.setText("Atom not found");
                 }
 
+                tempAtom = atoms.getAtom(symbole);
 
-
-
+                answTxt.setTextFill(Color.BLUEVIOLET);
+                answTxt.setText("" + tempAtom);
 
 
 
@@ -118,8 +135,6 @@ public class Main extends Application {
 
         primaryStage.show();
     }
-
-
 
 
     public static void main(String[] args) {
@@ -158,9 +173,12 @@ public class Main extends Application {
         return returnButton;
     }
 
-    private void resetInfoTxt(){
+    private void resetTxt(){
         infoTxt.setTextFill(null);
         infoTxt.setText("");
+        answTxt.setTextFill(null);
+        answTxt.setText("");
+
     }
 
     private Button makeButton(int minWidth, int maxWidth){

@@ -12,7 +12,7 @@ public class Atoms {
 
     //Takes from list given by Trine
     public Atoms() {
-        initAtomList("Orbitaler.txt");
+        initAtomList("/home/snooze/Git/Scooby/OrbitalsGiver/src/Orbitals.txt");
     }
     //Different way to initAtom from list
     private void initAtomList(String filepath){
@@ -20,7 +20,7 @@ public class Atoms {
         try {
             text = new Scanner(new File(filepath));
         } catch(FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File not found!");
             return;
         }
         System.out.println("File found!");
@@ -47,8 +47,8 @@ public class Atoms {
             pointer++;
         }
 
-        printAtoms();
 
+        System.out.println(atoms.get(0));
 
 
 
