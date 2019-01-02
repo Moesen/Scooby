@@ -1,0 +1,6 @@
+[submodule "Atomer2/Data/Alex/molecular-data"]
+	path = Atomer2/Data/Alex/molecular-data
+	url = https://github.com/AlexGustafsson/molecular-data.git
+[submodule "Atomer2/Data/molecular-data"]
+	path = Atomer2/Data/molecular-data
+	url = https://github.com/AlexGustafsson/molecular-data.git
