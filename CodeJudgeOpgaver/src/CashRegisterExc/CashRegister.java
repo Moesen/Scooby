@@ -10,45 +10,64 @@ public class CashRegister {
     //String = barcode, Item = rest of prices.txt;
     Map<String, Item> Prices = new HashMap<>();
     //String = Catagory,
-    Map<String, > Bill = new HashMap<>();
+    Map<String, Discount> Discounts = new HashMap<>();
+    //
+
 
     public CashRegister(String priceFilename, String discountsFilename)
     {
+        //Loads files prices.txt and discount.txt;
+        Scanner prices = loadFile(priceFilename);
+        Scanner discounts = loadFile(discountsFilename);
 
-        Scanner prices;
-        try{
-            prices = new Scanner(new File(priceFilename));
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
-            return;
-        }
+        //Inits prices.txt into Prices
+        initPrices(prices, Prices);
+        //Inits discount.txt
+        initDiscount(discounts, Discounts);
 
+    }
 
-
-        initPrices(prices);
-
-        System.out.println(Prices.get("3 601766 062447"));
-
-
-
+    public void printReceipt(String barcodeFilename){
 
     }
 
 
-    //Inits prices, by loading text into scanner object, and seperating with comma.
-    //Then it makes a new key (barcode) and a new item to the barcode.
-    private void initPrices(Scanner prices)
-    {
-        String[] values;
-        String catagory, name, kr, ear;
-        while(prices.hasNextLine()){
-            values = prices.nextLine().split(",");
-            catagory = values[1];
-            name = values[2];
-            kr = values[3];
-            ear = values[4];
 
-            Prices.put(values[0], new Item(catagory, name, kr, ear));
+
+
+
+    //Inits txt-values (Scanner txt) into a HashMap (register)
+    private void initPrices(Scanner txt, Map register){
+        String[] temp;
+
+        while(txt.hasNextLine()){
+            temp = txt.nextLine().split(",");
+            register.put(temp[0], new Item(temp[1], temp[2], temp[3], temp[4]));
+        }
+    }
+
+    //ToDo Make this less redundant
+    //Does the same as initPrices, just couldnt find a way to make it less
+    //redundant
+    private void initDiscount(Scanner txt, Map register){
+        String[] temp;
+
+        while(txt.hasNextLine()){
+            temp = txt.nextLine().split(",");
+            register.put(temp[0], new Discount(temp[1], temp[2], temp[3]));
+        }
+
+    }
+
+    //Tries to load Scanner object from filepath. If not, prints
+    //Which path was not loaded and returns null;
+    private Scanner loadFile(String filePath){
+        try{
+            return new Scanner(new File(filePath));
+        } catch (FileNotFoundException e){
+            System.out.println("Did not find " + filePath);
+            System.exit(0);
+            return null;
         }
     }
 
