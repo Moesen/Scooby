@@ -1,0 +1,134 @@
+Opgave
+In this exercise, you must write a program for printing out receipts from a cash register. All data is given as files, so you will need to parse all the data using the file reading from Chapter 14 of B&K.
+
+    The class CashRegister must have a single constructor: CashRegister(String priceFilename, String discountsFilename), which loads all information from the two given files.
+    The prices file is comma separated with one line per item for sale, using the following format for each line:
+
+    <barcode>,<category>,<name>,<kr>,<øre>
+
+    As as example, 1L of milk could be represented as:
+
+    0 580524 463272,MEJERI,SKUMMETMÆLK,5,95
+
+    In this example, the bar code is 0 580524 463272. The category is MEJERI. The name is SKUMMETMÆLK. The price is DKK 5,95.
+    The discounts file is comma separated with one line per offer, using the following format for each line:
+
+    <barcode>,<limit>,<kr>,<øre>
+
+    Each barcode will have at most one discount offer associated. The limit indicates how many of the item must be purchased before the discount kicks in, in which case the price is the lower per-item price. If fewer items are purchased, the offer is ignored. As an example, say that oats were on discount at a price of DKK 10,00, as long as you bought at least two. This would show up in discounts.txt as a line:
+
+    1 173648 738266,2,10,00
+
+    The class CashRegister must have a method printReceipt(String barcodeFilename), which processes all the barcodes from the barcode file, and prints the final receipt according to the requirements below.
+    The items of a purchase in the barcode file are given as individual bar code values, with one bar code per line. For instance, someone buying two 1 L cartons of milk and a packet of oats would be given as a file (e.g., called bar1.txt) with the contents:
+
+    0 580524 463272
+    0 580524 463272
+    1 173648 738266
+
+    where the last bar code is for the oats (which costs 11,95). For this purchase, the total price is 5,95 + 5,95 + 11,95 = 23,85.
+    Each item bought must be printed on the final receipt
+
+    SKUMMETMÆLK                      5,95
+
+    The item name is left-adjusted, while the price is right-adjusted, with a total with of 38 characters. It might be worth it to read up on System.out.printf to achieve this. Hint: String.format("%10s", "NAME") results in the string
+
+    "      NAME"
+
+    , which is 10 characters long and NAME is right-aligned. Similarly, String.format("%-10s", "NAME") results in
+
+    "NAME      "
+
+    , which is 10 characters long and NAME is left aligned.
+    When multiple identical items are bought, they must be printed in the following way:
+
+    SKUMMETMÆLK                      
+      2 x 5,95                      11,90
+
+    Each category of items must be printed separatedly, and they must be printed in alphabetical order. Remember that you can sort a List<String> alphabetically by calling the sort(). As an example, examine:
+
+             * FRUGT & GRØNT *
+    KARTOFLER OVN & MOS             18,00
+    ØKO GULERØDDER                  10,00
+
+                 * MEJERI *
+    FRILANDSÆG                      25,95
+    KÆRGÅRDEN                       14,95
+
+    Furthermore, the items within each category must be in alphabetical order as well.
+    Some items have a bulk purchase discount, as given by the discounts file. If a discount is triggered, it must be shown below the item that triggered, with the amount saved. As an example, let's say that bar3.txt contains the following bar codes (same as bar1.txt, but with 3 boxes of oats):
+
+    0 580524 463272
+    1 173648 738266
+    1 173648 738266
+    0 580524 463272
+    1 173648 738266
+
+    the a discount is triggered, and it should be shown as:
+
+    HAVREGRYN
+      3 x 11,95                     35,85
+    RABAT                            5,85-
+    SKUMMETMÆLK
+      2 x 5,95                      11,90
+
+    Notice that the '-' sign is on the right instead of the left, as is customary on such receipts.
+    At the bottom of the receipt, you must print a subtotal (i.e. total ignoring discounts), then the discount separately, and then the total. Some grocery stores have a special discount system, where you get "mærker" for every purchase of DKK 50. This would also show up at the bottom of the receipt. Finally, the danish sales tax is 25% on top of all prices (i.e. 20% of the price you pay), and this is typically shown at the bottom of the receipt. A full receipt should look like this:
+
+                 * BOLIG *
+    JULEKORT                        29,95
+
+              * DRIKKEVARER *
+    BLANDET SAFT
+      2 x 19,95                     39,90
+    RABAT                           19,90-
+
+               * ELEKTRONIK *
+    BATTERIER
+      3 x 32,95                     98,85
+    RABAT                           26,85-
+
+             * FRUGT & GRØNT *
+    KARTOFLER OVN & MOS             18,00
+    ØKO GULERØDDER                  10,00
+
+                 * MEJERI *
+    FRILANDSÆG                      25,95
+    KÆRGÅRDEN                       14,95
+    SKUMMETMÆLK
+      3 x 5,95                      17,85
+    SKYR YOGHURT
+      2 x 22,75                     45,50
+    RABAT                           19,50-
+    VORES PISKEFLØDE                16,50
+
+            * PLANTER/BLOMSTER *
+    LER 2 KG                         6,00
+
+                * SLAGTER *
+    HAMBURGERRYG                    13,95
+    HK SVIN/KALV                    21,95
+
+             * ØVR. FØDEVARER *
+    BLØD NUGAT 150G                 26,25
+    BØNNEKAFFE                      55,50
+    GRØNLANGKÅL                     28,00
+    KERNEBRØD                       20,75
+
+    -------------------------------------
+
+    SUBTOT                         489,85
+
+    RABAT                           66,25
+
+    TOTAL                          423,60
+
+    KØBET HAR UDLØST 8 MÆRKER
+
+    MOMS UDGØR                      84,72
+
+Hints:
+
+    The basic problem is, given a barcode, finding out what the corresponding item is and whether there is a discount. Both of these can be done elegantly with Maps, e.g., a HashMap.
+    Another sub-problem is counting the number of occurences of each item. This can also be done with a map from barcode (e.g., String) to number of occurences (e.g., Integer).
+
