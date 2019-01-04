@@ -1,0 +1,161 @@
+commit ac20258361c55ad4eb98a7cc6222d6d1faf8b0f4
+Merge: 177090c 84560f1
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Fri Jan 4 00:15:37 2019 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit 177090cb2bc27027079102fa6c08581307f81b5b
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Fri Jan 4 00:15:33 2019 +0100
+
+    Some minor things
+
+commit 84560f18cf54387c2ef13da12f5ae94f23e17b84
+Author: Snooze Ubuntu <gustavmoesmand@gmail.com>
+Date:   Fri Jan 4 00:14:32 2019 +0100
+
+    added more to CashRegister. Commiting for commute
+
+commit 8a045eb58733d954ec94c94e1d6e865e8ddf93ed
+Author: Snooze Ubuntu <gustavmoesmand@gmail.com>
+Date:   Thu Jan 3 19:05:35 2019 +0100
+
+    CashRegister inits
+
+commit b19a1276a75b1344384ce4739ac58ec58f398b20
+Author: Moesen <s174169@student.dtu.dk>
+Date:   Thu Jan 3 14:19:54 2019 +0100
+
+    added assignment txt
+
+commit d5995b656a39110d1cec130826856e07c32c15c1
+Author: Moesen <s174169@student.dtu.dk>
+Date:   Thu Jan 3 14:17:55 2019 +0100
+
+    added CashRegister assignment. Look at codeJudge, for assignment txt
+
+commit 1bedc8cf91ccddf9433afb21114459556b075c4a
+Author: LunuxPjuteren <s174169@student.dtu.dk>
+Date:   Wed Jan 2 22:26:36 2019 +0100
+
+    Added excercises, and project about hashMap
+
+commit 61e0ecdaf5e937e306012775376586df004fbaa1
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Tue Jan 1 21:29:50 2019 +0100
+
+    Serialization and path excercises
+
+commit 55cbe700abb7a58d88509daadad98135cd6e9545
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Tue Jan 1 17:28:44 2019 +0100
+
+    Serialization begun
+
+commit b6c7909f512f9280d94dd3fb749ae8ca15eeeef2
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Mon Dec 31 13:54:40 2018 +0100
+
+    Added Spotify Examples (Ooath)
+
+commit 771a65294a330f0b9f4228f0541d55058abc2d0c
+Merge: 5b2ff27 cbad801
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Sun Dec 30 13:34:51 2018 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit 5b2ff27795c6e443b0a8d5a65180174eeff304f2
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Sun Dec 30 13:34:32 2018 +0100
+
+    project structure changed
+
+commit cca5bbca5e1edae888239fde7c0318b2dd734078
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Sun Dec 30 13:01:27 2018 +0100
+
+    third try on musicify
+
+commit cbad8016a03af5b7768ca1aec8b5b59a6098db2a
+Merge: d54f1e1 7587ea8
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Fri Dec 28 12:29:58 2018 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit d54f1e1f02186dbee8496c994826d2012ec1b4f9
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Fri Dec 28 12:29:55 2018 +0100
+
+    Changes to JavaFxTest
+
+commit 7587ea8d9d423174861be39c2f157da249b618f2
+Author: Snooze <gustavmoesmand@gmail.com>
+Date:   Thu Dec 20 21:08:54 2018 +0100
+
+    Added a lot of Orbitals
+
+commit 53adfb4fb0fda17bb0dd3140160ae1eaa9a2982d
+Author: Snooze <gustavmoesmand@gmail.com>
+Date:   Tue Dec 11 17:58:43 2018 +0100
+
+    Har tilfajet det meste af Orbitals
+
+commit 73bb1cd607e296a6fd39e1c3db085b4b1bf762f6
+Merge: 19e15a9 0a3c733
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Wed Dec 5 18:46:54 2018 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit 19e15a9b8a20576116dc79db585f592c008d1e8d
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Wed Dec 5 18:46:47 2018 +0100
+
+    chem buddy added
+
+commit 0a3c7335f3ba2e3b0bcac3b4f554964969be2fc7
+Merge: cdcae49 5c80739
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Wed Dec 5 17:55:05 2018 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit cdcae49d603815d7343555279cdb903558eaf8a5
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Wed Dec 5 17:53:36 2018 +0100
+
+    Nec merge
+
+commit 5c80739f401784978a9e7ee8034f982b6489abb5
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Wed Dec 5 17:52:50 2018 +0100
+
+    Har lavet javaFx directory in intelij
+
+commit c92a620222802a9eac86c24bcaccb1c9f79c0993
+Merge: cf9cccd b56d1a4
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Tue Dec 4 19:37:09 2018 +0100
+
+    Merge branch 'master' of https://github.com/Moesen/Scooby
+
+commit cf9cccdf23e32f0bda163ef1d95b77b1e286a256
+Author: s174169 <s174169@student.dtu.dk>
+Date:   Tue Dec 4 19:37:07 2018 +0100
+
+    Script Added
+
+commit b56d1a453ec4f51e193519602413e818e8303cec
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Tue Dec 4 19:35:43 2018 +0100
+
+    Update README.md
+
+commit 4bfa840ccfb665818982d041e6853fc76405dc5e
+Author: Gustav Lang Moesmand <42034018+Moesen@users.noreply.github.com>
+Date:   Tue Dec 4 19:32:21 2018 +0100
+
+    Initial commit

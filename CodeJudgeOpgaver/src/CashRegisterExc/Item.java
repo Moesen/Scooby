@@ -1,7 +1,5 @@
 package CashRegisterExc;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.BasicValue;
-
 public class Item {
 
     private String barcode;
