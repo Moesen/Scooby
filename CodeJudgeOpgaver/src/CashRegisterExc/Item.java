@@ -1,50 +1,91 @@
 package CashRegisterExc;
 
-public class Item {
+public class Item implements Comparable<Item>{
 
-    private String barcode;
     private String catagory;
     private String name;
-    private int kr;
-    private int ear;
+    private float price;
 
-    public Item(String barcode, String catagory, String name, String kr, String ear){
-        this.barcode = barcode;
-        this.catagory = catagory;
-        this.name = name;
-        this.kr = Integer.parseInt(kr);
-        this.ear = Integer.parseInt(ear);
+    private int discountKr;
+    private int discountEar;
+    private int discountLim;
+
+    private int number = 0;
+
+    public Item(String[] info){
+        this.catagory   = info[1];
+        this.name       = info[2];
+
+        int a = Integer.parseInt(info[3]);
+        int b = Integer.parseInt(info[4]);
+
+        this.price = (float) a + (float) b/100;
+
+
     }
 
-
-    public void printItem(int number){
-        int numLen = Math.round((kr*100+ear)/10) + 1;
-        int space = 38 - (numLen + name.length());
-        String price = "" + kr + "," + ear;
-        if(number == 1){
-            System.out.printf("%-30s %s \n", name, price);
-        } else {
-
-        }
+    public void addDiscount(String limit, String discountKr, String discountEar){
+        this.discountLim = Integer.parseInt(limit);
+        this.discountEar = Integer.parseInt(discountEar);
+        this.discountKr  = Integer.parseInt(discountKr);
     }
 
-    public String getBarcode(){
-        return barcode;
+    public void addOne(){
+        number++;
     }
+
+    public void reset(){
+        number = 0;
+    }
+
+    public char getCatagoryChar(int index){
+        return this.catagory.charAt(index);
+    }
+
+    public char getNameChar(int index){
+        return name.charAt(index);
+    }
+
+    public String getCatagory(){
+        return catagory;
+    }
+
     public String getName(){
         return name;
     }
-    public String getCatagory() {
-        return catagory;
-    }
-    public int getKr() {
-        return kr;
-    }
-    public int getEar() {
-        return ear;
-    }
-    public String toString(){
-        return "Catagory: " + catagory + ", name: " + name + ", price: " + kr + "," + ear;
+
+    public int getNumber(){
+        return number;
     }
 
+    public String toString(){
+        return name +" antal: " + number;
+    }
+
+    public String getPriceStr(){
+        return Float.toString(price).replace('.',',');
+    }
+
+    public String getPriceStr(int number){
+        return number +  " x " + Float.toString(price).replace('.',',');
+    }
+
+    public String getMultPrice(int number){
+        return Float.toString(price * number).replace('.',',');
+    }
+
+    //Sorts the items by catagory
+    @Override
+    public int compareTo(Item i) {
+            for(int j = 0; j < 3; j++){
+            if (i.getCatagoryChar(j) > getCatagoryChar(j)) return -1;
+            else if (i.getCatagoryChar(j) < getCatagoryChar(j)) return 1;
+            }
+            for(int j = 0; j < 5; j++){
+                if(i.getNameChar(j) > getNameChar(j)) return -1;
+                else if( i.getNameChar(j) < getNameChar(j)) return 1;
+            }
+            return 0;
+
+    }
 }
