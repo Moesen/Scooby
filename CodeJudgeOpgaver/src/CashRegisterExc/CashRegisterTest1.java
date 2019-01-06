@@ -3,7 +3,7 @@ package CashRegisterExc;
 public class CashRegisterTest1 {
 
     public static void main(String[] args) {
-        int num = 1;
+        int num = 4;
         String bar = "/home/snooze/Git/Scooby/CodeJudgeOpgaver" +
                 "/src/CashRegisterExc/input/bar" + num + ".txt";
 
